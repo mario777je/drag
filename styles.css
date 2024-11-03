@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: green rgb(16, 90, 1);
+}
+
+body::-webkit-scrollbar { 
+    display: none; 
+ }
+body {
+  font-family: outfit, sans-serif;
+  background-color: transparent;
+  overflow:hidden
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100vh;
+}
+
+aside {
+  background-color: rgb(252, 254, 114);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+ 
+  
+}
+
+aside h1 {
+  text-align: center;
+  font-size: 20px;
+  color: #110248;
+  margin: 0;
+  font-weight: bolder;
+}
+
+footer {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bolder;
+  color:#808080
+  
+  
+}
+
+header,footer{
+    padding: 0;
+}
+
+aside section {
+  padding:5px 10px;
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.draggable-shape {
+  width: 65px;
+  height: 65px;
+  background-color: #f00;
+  margin: 7px;
+  box-shadow: 0 0 5px black;
+}
+
+main {
+  padding: 10px;
+  background-color: rgb(19, 163, 60);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+main h2 {
+  text-align: center;
+  font-size: 20px;
+  color: #110248;
+  margin: 0 0 30px 0;
+  font-weight: bolder;
+}
+
+main section {
+  padding: 10px;
+  background-color: #7ce273;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 85%;
+  width: 100%;
+}
+
+.droppable-shape {
+  width: 70px;
+  height: 70px;
+  box-shadow: 0 0 10px black;
+  background-color: rgb(10, 60, 10);
+  margin: 10px;
+}
+
+.draggable-shape:hover {
+  cursor: move;
+  transform: scale(1.1);
+}
+
+#square {
+  background-color: rgb(197, 71, 71);
+}
+
+#triangle {
+  background-color: rgb(220, 79, 166);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+#circle {
+  background-color: #00f;
+  border-radius: 50%;
+}
+
+#diamond {
+  background-color: #fd68d1;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  width: 75px;
+  height: 70px;
+}
+
+#pentagon {
+  background-color: rgb(57, 191, 211);
+  width: 80px;
+  height: 80px;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  box-shadow: none;
+}
+
+.droppable-shape {
+  width: 70px;
+  height: 70px;
+  box-shadow: 0 0 10px black;
+  background-color: rgb(10, 60, 10);
+  margin: 10px;
+}
+
+.droppable-shape[data-id="square"] {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.droppable-shape[data-id="triangle"] {
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.droppable-shape[data-id="circle"] {
+  clip-path: circle(50%);
+}
+
+.droppable-shape[data-id="diamond"] {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.droppable-shape[data-id="pentagon"] {
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: 2fr 5fr;
+  }
+
+  aside section {
+    margin: 10px 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    grid-template-columns: 1fr 2fr;
+    
+  }
+
+  aside {
+    padding: 20px;
+  }
+
+  aside section {
+    margin: 20px 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  main h2{
+    margin-top: 40px;
+  }
+
+  aside, main {
+    height: 50vh;
+  }
+
+  aside{
+    align-items: center;
+    justify-content: center;
+  }
+
+  aside section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    padding-top:10px
+  }
+
+  .draggable-shape, .droppable-shape {
+    width: 50px;
+    height: 50px;
+  }
+
+  #pentagon, #diamond {
+    width: 50px;
+    height: 50px;
+  }
+
+  footer {
+    display: none;
+  }
+}

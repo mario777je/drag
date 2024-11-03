@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Game - Drag and Drop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="red-triangle-png-20.png">
+</head>
+<body>
+    <div class="wrapper">
+        <aside aria-label="Panel of shapes available for dragging">
+            <header>
+            <h1>Shape Game</h1>
+            </header>
+            <section class="draggable-section">
+                <div class="draggable-shape" id="square" draggable="true" aria-label="Shape 2"></div>
+                <div class="draggable-shape" id="triangle" draggable="true" aria-label="Shape 3"></div>
+                <div class="draggable-shape" id="pentagon" draggable="true" aria-label="Shape 4"></div>
+                <div class="draggable-shape" id="circle"  draggable="true" aria-label="Shape 5"></div>
+                <div class="draggable-shape" id="diamond" draggable="true" aria-label="Shape 1"></div>
+            </section>
+            <footer>
+                <p>Mario A  ©<p>
+            </footer>
+        </aside>
+
+        <main aria-label="Main game area">
+           <h2>Drag The Shape To The Correct Spot!</h2>
+            <section class="droppable-section">
+                
+                <div class="droppable-shape" data-id="triangle"aria-label="Correct spot for Shape 3"></div>
+               
+                <div class="droppable-shape" data-id="square"aria-label="Correct spot for Shape 2"></div>
+                <div class="droppable-shape" data-id="diamond" aria-label="Correct spot for Shape 5"></div>
+                <div class="droppable-shape" data-id="circle" ariad-label="Correct spot for Shape 4"></div>
+                <div class="droppable-shape" data-id="pentagon" aria-label="Correct spot for Shape 1"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
